@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+  <h2>{{ post.title }}</h2>
+  <p>{{ post.content }}</p>
+  <p>Author: {{ post.author }}</p>
+  <p>Created Date: {{ post.created_date }}</p>
+
+  <h3>Comments</h3>
+  {% for comment in comments %}
+    <p>{{ comment.author }} said:</p>
+    <p>{{ comment.content }}</p>
+    <p>Created Date: {{ comment.created_date }}</p>
+    <hr>
+  {% empty %}
+    <p>No comments yet.</p>
+  {% endfor %}
+
+  <h3>Add a Comment</h3>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Comment</button>
+  </form>
+{% endblock %}
