@@ -31,6 +31,12 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+CUSTOM_APPS = [
+    'blog',
+    'blog_platform',
+    
+    
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -39,8 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
-]
+    # 'blog',
+  
+] +CUSTOM_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -51,6 +58,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+AUTH_USER_MODEL = 'blog.Profile'
 
 ROOT_URLCONF = 'blog_platform.urls'
 

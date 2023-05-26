@@ -1,0 +1,55 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title%}{% endblock%}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="{% static 'base.css'%}">
+    </head>
+    <body>
+        <nav>
+            <div class="left logo">
+                <h1>Sell Easy</h1>
+            </div>
+            <div class="middle search-panel">
+                <select>
+                    <option>Appliances</option>
+                    <option>Furniture</option>
+                    <option>Beature Care</option>
+                    <option>Men Clothes</option>
+                    <option>Women Clothes</option>
+                    <option>Children Clothes</option>
+                    <option>Shoes</option>
+                    <option>Laptops</option>
+                </select>
+                <div class="search">
+                    <input type="text" placeholder="search products"/>
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="right">
+                <ul class="auth">
+                    <li>Log in</li>
+                    <li>Sign up</li>
+                </ul>
+                <div class="shopping-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p>{{2}}</P>
+                </div>
+            </div>
+        </nav>
+       <main>
+        {%block content%}
+        {% endblock%}
+       </main>
+       <footer>
+            {% include 'footer.html'%}
+       </footer>
+    </body>
+</html>

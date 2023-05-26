@@ -1,7 +1,7 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
-from .templates.blog import views
+
 
 
 urlpatterns = [
@@ -12,3 +12,4 @@ urlpatterns = [
     path('posts/', views.post_list, name='post_list'),
     path('post/<int:post_id>/', views.post_detail, name='post_detail'),
 ]
+
